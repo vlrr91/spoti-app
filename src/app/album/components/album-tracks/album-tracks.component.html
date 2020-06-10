@@ -1,0 +1,15 @@
+<ul class="list-group text-white m-auto">
+  <li class="list-group-item bg-dark"
+      *ngFor="let track of tracks">
+    <div class="row">
+      <div class="col-12 col-sm-5">
+        <p>{{track.name}}</p>
+      </div>
+      <div class="col-12 col-sm-7">
+        <audio [src]="track.previewUrl"
+               controls class="w-100">
+        </audio>
+      </div>
+    </div>
+  </li>
+</ul>

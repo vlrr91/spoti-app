@@ -1,0 +1,17 @@
+<section class="row" *ngIf="album">
+  <div class="pl-3">
+    <img width="64"
+         class="img-thumbnail bg-dark border-0"
+         [src]="album.images[2].url"
+         [alt]="album.name">
+  </div>
+  <div class="col pl-2 pr-0 px-sm-3">
+    <h4 class="text-white">{{album.name}}</h4>
+    <p class="m-0">
+      <span class="badge badge-success mr-2"
+            *ngFor="let artist of album.artists">
+        {{artist.name}}
+      </span>
+    </p>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<div class="album-container">
+  <div class="my-4">
+    <sp-back-button></sp-back-button>
+  </div>
+  <article>
+    <sp-album-info [album]="album$ | async"></sp-album-info>
+    <div class="my-4">
+      <sp-album-tracks [tracks]="tracks$ | async">
+      </sp-album-tracks>
+    </div>
+  </article>
+</div>
+
+
+

@@ -3,6 +3,7 @@
 </h2>
 <sp-card-columns>
   <sp-home-card *ngFor="let newRelease of newReleases$ | async"
-                [newRelease]="newRelease">
+                [newRelease]="newRelease"
+                (selectCard)="select($event)">
   </sp-home-card>
 </sp-card-columns>
