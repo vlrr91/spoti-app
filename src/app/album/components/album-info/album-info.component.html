@@ -2,7 +2,7 @@
   <div class="pl-3">
     <img width="64"
          class="img-thumbnail bg-dark border-0"
-         [src]="album.images[2].url"
+         [src]="album.images | noImage:2"
          [alt]="album.name">
   </div>
   <div class="col pl-2 pr-0 px-sm-3">

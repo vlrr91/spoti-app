@@ -4,12 +4,14 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { CardColumnsComponent } from './components/card-columns/card-columns.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { NoImagePipe } from './pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
     NavBarComponent,
     CardColumnsComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    NoImagePipe
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
   exports: [
     NavBarComponent,
     CardColumnsComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    NoImagePipe
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,22 @@
+<label for="search"
+       class="text-white">
+  Busca a tu artista favorito
+</label>
+<input autocomplete="off"
+       [formControl]="searchCtrl"
+       [class.is-valid]="searchCtrlIsValid"
+       [class.is-invalid]="searchCtrlIsInvalid"
+       class="form-control bg-dark text-white col-12 col-md-6"
+       id="search"
+       placeholder="artista">
+<div *ngIf="searchCtrl.errors && searchCtrl.dirty">
+  <small class="text-danger"
+         *ngIf="searchCtrl.hasError('required')">
+    Ingresa el nombre del artista
+  </small>
+  <small class="text-danger"
+         *ngIf="searchCtrl.hasError('minlength')">
+    Escribe mínimo 3 caracteres
+  </small>
+</div>
+

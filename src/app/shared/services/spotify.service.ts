@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { Album } from '../models/album';
 import { Track } from '../models/track';
+import { Artist } from '../models/artist';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { Track } from '../models/track';
 export class SpotifyService {
   private newReleasesUrl = `${environment.baseUrl}/album/new-releases?country=CO`;
   private albumUrl = `${environment.baseUrl}/album`;
+  private searchUrl = `${environment.baseUrl}/search?`;
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +27,9 @@ export class SpotifyService {
 
   getAlbumById(id: string): Observable<Album> {
     return this.http.get<Album>(`${this.albumUrl}/${id}`);
+  }
+
+  searchArtists(searchValue: string): Observable<Artist[]> {
+    return this.http.get<Artist[]>(`${this.searchUrl}q=${searchValue}`);
   }
 }
