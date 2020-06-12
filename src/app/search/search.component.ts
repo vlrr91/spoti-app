@@ -11,14 +11,17 @@ import { Artist } from '../shared/models/artist';
 })
 export class SearchComponent {
   artists$: Observable<Artist[]>;
+  startSearch: boolean;
 
   constructor(private spotifyService: SpotifyService) {
   }
 
   search(event): void {
     if (event) {
+      this.startSearch = true;
       this.artists$ = this.spotifyService.searchArtists(event);
     } else {
+      this.startSearch = false;
       this.artists$ = undefined;
     }
   }

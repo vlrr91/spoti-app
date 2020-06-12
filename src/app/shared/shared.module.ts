@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { CardColumnsComponent } from './components/card-columns/card-columns.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     NavBarComponent,
     CardColumnsComponent,
     BackButtonComponent,
-    NoImagePipe
+    NoImagePipe,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { NoImagePipe } from './pipes/no-image.pipe';
     NavBarComponent,
     CardColumnsComponent,
     BackButtonComponent,
-    NoImagePipe
+    NoImagePipe,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }

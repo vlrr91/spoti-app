@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'artist',
     loadChildren: () => import('./artist/artist.module').then(m => m.ArtistModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
   }
 ];
 

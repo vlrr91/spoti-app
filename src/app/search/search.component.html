@@ -1,11 +1,17 @@
 <div class="my-4">
   <sp-search-input (value)="search($event)"></sp-search-input>
 </div>
-<sp-card-columns>
-  <sp-search-card *ngFor="let artist of artists$ | async"
-                  [artist]="artist">
-  </sp-search-card>
-</sp-card-columns>
-<div class="jumbotron bg-dark" *ngIf="(artists$ | async)?.length === 0">
-  <h3 class="text-center text-white">No encotramos un artista con ese nombre.</h3>
-</div>
+<ng-container *ngIf="(artists$ | async); else loading">
+  <sp-card-columns>
+    <sp-search-card *ngFor="let artist of artists$ | async"
+                    [artist]="artist">
+    </sp-search-card>
+  </sp-card-columns>
+  <div class="jumbotron bg-dark" *ngIf="(artists$ | async)?.length === 0">
+    <h3 class="text-center text-white">No encotramos un artista con ese nombre.</h3>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <sp-spinner *ngIf="startSearch"></sp-spinner>
+</ng-template>
+

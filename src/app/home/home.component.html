@@ -1,9 +1,15 @@
-<h2 class="text-center text-warning my-5">
+<h2 class="text-center text-warning my-4 my-sm-5">
   <span class="text-white">Nuevos lanzamientos</span> Colombia
 </h2>
-<sp-card-columns>
-  <sp-home-card *ngFor="let newRelease of newReleases$ | async"
-                [newRelease]="newRelease"
-                (selectCard)="select($event)">
-  </sp-home-card>
-</sp-card-columns>
+<ng-container *ngIf="newReleases$ | async; else loading">
+  <sp-card-columns>
+    <sp-home-card *ngFor="let newRelease of newReleases$ | async"
+                  [newRelease]="newRelease"
+                  (selectCard)="select($event)">
+    </sp-home-card>
+  </sp-card-columns>
+</ng-container>
+<ng-template #loading>
+  <sp-spinner></sp-spinner>
+</ng-template>
+

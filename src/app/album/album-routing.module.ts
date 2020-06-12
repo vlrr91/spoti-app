@@ -5,6 +5,11 @@ import { AlbumComponent } from './album.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
     path: ':id',
     component: AlbumComponent
   }

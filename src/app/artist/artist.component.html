@@ -2,11 +2,16 @@
   <div class="my-4">
     <sp-back-button></sp-back-button>
   </div>
-  <article>
-    <sp-artist-info [artist]="artist$ | async"></sp-artist-info>
-    <div class="my-4">
-      <sp-artist-tracks [tracks]="tracks$ | async"></sp-artist-tracks>
-    </div>
-  </article>
+  <ng-container *ngIf="(artist$ | async) && (tracks$ | async); else loading">
+    <article>
+      <sp-artist-info [artist]="artist$ | async"></sp-artist-info>
+      <div class="my-4">
+        <sp-artist-tracks [tracks]="tracks$ | async"></sp-artist-tracks>
+      </div>
+    </article>
+  </ng-container>
+ <ng-template #loading>
+   <sp-spinner></sp-spinner>
+ </ng-template>
 </div>
 

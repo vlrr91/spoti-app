@@ -6,3 +6,4 @@ export interface Album {
   images?: any[];
   artists: Artist[];
 }
+

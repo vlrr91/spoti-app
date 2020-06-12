@@ -5,6 +5,11 @@ import { ArtistComponent } from './artist.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
     path: ':id',
     component: ArtistComponent
   }
