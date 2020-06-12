@@ -3,7 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ArtistComponent } from './artist.component';
 
-const routes: Routes = [{ path: '', component: ArtistComponent }];
+const routes: Routes = [
+  {
+    path: ':id',
+    component: ArtistComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

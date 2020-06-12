@@ -1,4 +1,13 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+  ElementRef,
+  ViewChild,
+  AfterViewInit
+} from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -9,10 +18,11 @@ import { debounceTime } from 'rxjs/operators';
   styles: [
   ]
 })
-export class SearchInputComponent implements OnInit, OnDestroy {
+export class SearchInputComponent implements OnInit, OnDestroy, AfterViewInit {
   searchCtrl: FormControl;
   searchCtrlSub: Subscription;
   @Output() value = new EventEmitter<string>();
+  @ViewChild('input') input: ElementRef;
 
   constructor() {
     this.searchCtrl = new FormControl(
@@ -43,5 +53,9 @@ export class SearchInputComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.searchCtrlSub.unsubscribe();
+  }
+
+  ngAfterViewInit(): void {
+    this.input.nativeElement.focus();
   }
 }

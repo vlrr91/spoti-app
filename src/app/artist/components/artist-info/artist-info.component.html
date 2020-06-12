@@ -1,0 +1,17 @@
+<section class="row" *ngIf="artist">
+  <div class="pl-3">
+    <img width="64"
+         class="img-thumbnail bg-dark border-0"
+         [src]="artist.images | noImage:2"
+         [alt]="artist.name">
+  </div>
+  <div class="col pl-2 pr-0 px-sm-3">
+    <h4 class="text-white">{{artist.name}}</h4>
+    <a class="text-warning"
+       [href]="artist.externalUrl"
+       target="_blank"
+       rel="noopener noreferrer">
+      Mas información
+    </a>
+  </div>
+</section>

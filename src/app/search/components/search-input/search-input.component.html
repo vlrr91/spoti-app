@@ -2,7 +2,8 @@
        class="text-white">
   Busca a tu artista favorito
 </label>
-<input autocomplete="off"
+<input #input
+       autocomplete="off"
        [formControl]="searchCtrl"
        [class.is-valid]="searchCtrlIsValid"
        [class.is-invalid]="searchCtrlIsInvalid"

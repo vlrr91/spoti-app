@@ -14,6 +14,7 @@ export class SpotifyService {
   private newReleasesUrl = `${environment.baseUrl}/album/new-releases?country=CO`;
   private albumUrl = `${environment.baseUrl}/album`;
   private searchUrl = `${environment.baseUrl}/search?`;
+  private artistUrl = `${environment.baseUrl}/artists`;
 
   constructor(private http: HttpClient) { }
 
@@ -31,5 +32,13 @@ export class SpotifyService {
 
   searchArtists(searchValue: string): Observable<Artist[]> {
     return this.http.get<Artist[]>(`${this.searchUrl}q=${searchValue}`);
+  }
+
+  getArtistById(id: string): Observable<Artist> {
+    return this.http.get<Artist>(`${this.artistUrl}/${id}`);
+  }
+
+  getTopTracksByArtist(id: string): Observable<Track[]> {
+    return this.http.get<Track[]>(`${this.artistUrl}/${id}/top-tracks`);
   }
 }

@@ -1,4 +1,5 @@
-<section class="card text-white bg-dark search-card">
+<section class="card text-white bg-dark search-card"
+         (click)="selectArtist(artist.id)">
   <img class="card-img-top"
        [src]="artist.images | noImage:0"
        [alt]="artist.name">

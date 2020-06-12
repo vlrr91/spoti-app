@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Artist } from '../../../shared/models/artist';
 
@@ -10,5 +11,9 @@ import { Artist } from '../../../shared/models/artist';
 export class SearchCardComponent {
   @Input() artist: Artist;
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  selectArtist(id: string) {
+    this.router.navigate(['/artist', id]);
+  }
 }

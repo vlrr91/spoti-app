@@ -1,1 +1,12 @@
-<p>artist works!</p>
+<div class="artist-container">
+  <div class="my-4">
+    <sp-back-button></sp-back-button>
+  </div>
+  <article>
+    <sp-artist-info [artist]="artist$ | async"></sp-artist-info>
+    <div class="my-4">
+      <sp-artist-tracks [tracks]="tracks$ | async"></sp-artist-tracks>
+    </div>
+  </article>
+</div>
+
