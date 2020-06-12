@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     }
 
     if (event.type === 'artist') {
-      // TODO: select artist
+      this.router.navigate(['/artist', event.id]);
     }
   }
 }
