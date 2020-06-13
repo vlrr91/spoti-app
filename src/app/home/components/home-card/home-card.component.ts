@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Album } from '../../../shared/models/album';
 
 @Component({
   selector: 'sp-home-card',
