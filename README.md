@@ -1,4 +1,4 @@
-# SpotiApp
+# Spoti App
 
 Application that gets data from the spotify api, shows new releases and their tracks, allows you to search for an artist with their popular songs.
 
